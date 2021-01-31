@@ -1,8 +1,8 @@
-Vue.component('nav-bar',{
-    template:`
+// Vue.component('nav-bar',{
+//     template:`
         
-    `
-})
+//     `
+// })
 
 
 
@@ -14,23 +14,23 @@ let app = new Vue({
         searchInp: '',
 
     },
-    method: {
-        // main: function(){
+    methods: {
+        main: function(){
 
-        // },
-        // login: function(){
-        //     alert(1)
-        // },
-        // signin: function(){
-        //     alert(2)
-        // }
-        // ,
-        // searchMG: function(searchInp){
-        //     //str = manga name
-        //     alert(str)
-        // },
-        // fav: function(){
-        //     alert(4)
-        // },
+        },
+        login: function(){
+            alert(1)
+        },
+        signin: function(){
+            alert(2)
+        }
+        ,
+        searchMG: function(searchInp){
+            //str = manga name
+            alert(str)  
+        },
+        fav: function(){
+            alert(4)
+        },
     }
 })

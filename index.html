@@ -10,15 +10,12 @@
 </head>
 <body>
     <div id="main">
-        <!-- <nav-bar v-bind:style="nav_style">
-            
-        </nav-bar> -->
         <div id="test-nav">
             <div class="container ngang main-nav">
                 <div class="cchild ho">HOME</div>
                 <div class="search-bar ngang">
                     <input v-model="searchInp" @keyup.enter="searchMG" type="text" id="searchbar" placeholder="Quick search">
-                    <div style="padding-top: 4px;" class="ho" v-on:clicarchMgk="se"><i class="fas fa-search"></i></div>
+                    <div style="padding-top: 4px;" class="ho" v-on:click="searchMG"><i class="fas fa-search"></i></div>
                 </div>
                 <div class="ngang">
                     <div style="margin-right: 15px;" class="ho" ><i class="fas fa-heart"></i></div>
