@@ -1,5 +1,39 @@
 body{
     margin: 0;
-    background-color: rgb(12, 12, 15);
+    background-color: #111;
     color: white;
+}
+#test-nav{
+    height: 50px;
+    background-color: #2a2a2a;
+    position: fixed;
+    width: 100%;
+}
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+.fas{
+    color: white;
+}
+.ngang{
+    display: flex;
+    flex-direction: row;
+}
+.search-bar{
+    background-color: black;
+    width: 300px;
+    height: 25px;
+    display: flex;
+    justify-content: space-between ;
+    padding: 0 10px;
+}
+#searchbar{
+    border: none;
+    outline: none;
+    color: white;
+    background-color: black;
+    height: 20px;
+    margin-left: 3px;
 }

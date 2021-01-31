@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manga - free to read</title>
     <link rel="stylesheet" href="style/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
 </head>
 <body>
     <div id="main">
-        <nav></nav>
-        <main></main>
-        <footer></footer>
+        <!-- <nav-bar v-bind:style="nav_style">
+            
+        </nav-bar> -->
+        <div id="test-nav">
+            <div class="container ngang">
+                <div>HOME</div>
+                <div class="search-bar ngang">
+                    <input type="text" id="searchbar" placeholder="Quick search">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <script src="./script/vue-components.js"></script>
     <script src="./script/main.js"></script>
+    <script src="./script/vue-components.js"></script>
 </body>
 </html>
