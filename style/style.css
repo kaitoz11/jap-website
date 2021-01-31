@@ -8,11 +8,20 @@ body{
     background-color: #2a2a2a;
     position: fixed;
     width: 100%;
+    margin-bottom: 100px;
 }
 .container{
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+}
+.main-nav{
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 12.5px 0;
+}
+.cchild{
+    height: 100%;
 }
 .fas{
     color: white;
@@ -23,17 +32,25 @@ body{
 }
 .search-bar{
     background-color: black;
-    width: 300px;
-    height: 25px;
+    width: 400px;
+    height: 28px;
     display: flex;
     justify-content: space-between ;
-    padding: 0 10px;
+    padding: 0px 10px;
+}
+i{
+    max-height: 22px;
+    margin: auto;
 }
 #searchbar{
+    width: 100%;
     border: none;
     outline: none;
     color: white;
     background-color: black;
     height: 20px;
-    margin-left: 3px;
+    margin: 4px 5px 2px 5px;
+}
+.ho:hover{
+    cursor: pointer;
 }
