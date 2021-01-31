@@ -17,10 +17,14 @@
             <div class="container ngang main-nav">
                 <div class="cchild ho">HOME</div>
                 <div class="search-bar ngang">
-                    <input type="text" id="searchbar" placeholder="Quick search">
-                    <div style="padding-top: 4px;" class="ho" onclick=""><i class="fas fa-search"></i></div>
+                    <input v-model="searchInp" @keyup.enter="searchMG" type="text" id="searchbar" placeholder="Quick search">
+                    <div style="padding-top: 4px;" class="ho" v-on:clicarchMgk="se"><i class="fas fa-search"></i></div>
                 </div>
-                <div class="cchild ho">LOGIN</div>
+                <div class="ngang">
+                    <div style="margin-right: 15px;" class="ho" ><i class="fas fa-heart"></i></div>
+                    <div class="cchild ho" v-on:click="fav">LOGIN</div>
+                </div>
+                
             </div>
         </div>
     </div>
