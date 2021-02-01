@@ -15,7 +15,10 @@ let app = new Vue({
         users: [{
             username: "admin",
             password: "admin",
-        }]
+        }],
+
+        //nav dropdown
+        dropped_down: false,
     },
     methods: {
         main: function(){

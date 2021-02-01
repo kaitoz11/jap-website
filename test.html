@@ -6,13 +6,55 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        .ho:hover{
+            cursor: pointer;
+            background-color: darkgreen;
+        }
+        ul{
+            padding: 0;
+            margin: 10px 0 0 0;
+            width: 300px;
+            background-color: rgb(99, 99, 99);
+        }
+        li{
+            list-style: none;
+            padding: 5px 0;
+            text-align: center;
+        }
+        .log{
+            background-color: darkblue;
+            padding: 10px 20px;
+            width: 100px;
+            text-align: center;
+            
+        }
+        #main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
 </head>
 <body>
     <div id="main">
-        
+        <div class="log">LOGIN</div>
+        <ul>
+            <li class="ho" onclick="alert(1)">asdwq</li>
+            <li class="ho" onclick="alert(2)">123cas</li>
+        </ul>
     </div>
     <script>
+        let app = new Vue({
+            el: "#main",
+            data: {
+                droped_down: false
+            },
+            methods:{
 
+            }
+        })
     </script>
 </body>
 </html>
