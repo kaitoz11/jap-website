@@ -1,6 +1,6 @@
 Vue.component('nav-bar',{
     template:`
-    
+
     `
 })
 
@@ -12,7 +12,9 @@ let app = new Vue({
         // user id = 0 (not logged in yet)(1 as admin)
         user_id:0,
         searchInp: '',
-
+        users: [{
+            username:""
+        }]
     },
     methods: {
         main: function(){

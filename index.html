@@ -19,7 +19,7 @@
                 </div>
                 <div class="ngang">
                     <div style="margin-right: 15px;" class="ho" v-on:click="fav"><i class="fas fa-heart"></i></div>
-                    <div class="cchild ho" v-on:click="login">LOGIN</div>
+                    <div class="cchild ho" v-on:click="login" v-if="user_id==0">LOGIN</div>
                 </div>
                 
             </div>
