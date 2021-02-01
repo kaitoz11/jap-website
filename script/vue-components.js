@@ -13,26 +13,27 @@ let app = new Vue({
         user_id:0,
         searchInp: '',
         users: [{
-            username:""
+            username: "admin",
+            password: "admin",
         }]
     },
     methods: {
         main: function(){
-
+            
         },
         login: function(){
             alert(1)
         },
         signin: function(){
             alert(2)
-        }
-        ,
+        },
         searchMG: function(){
             //app.searchInp = manga name
             console.log(app.searchInp);
             app.searchInp = ''
         },
         fav: function(){
+            // favourite manga (can only toggle after logged in)
             alert(4)
         },
     }
