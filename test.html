@@ -7,15 +7,18 @@
     <link rel="stylesheet" href="./style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <style>
-        .ho:hover{
+        .ho:hover,.log:hover{
             cursor: pointer;
-            background-color: darkgreen;
+            color: darkgreen;
+            border-radius: 5px;
         }
         ul{
             padding: 0;
             margin: 10px 0 0 0;
             width: 300px;
             background-color: rgb(99, 99, 99);
+            border-radius: 5px;
+            border: 2px solid rgb(117, 117, 117);
         }
         li{
             list-style: none;
@@ -27,7 +30,7 @@
             padding: 10px 20px;
             width: 100px;
             text-align: center;
-            
+            border-radius: 5px;
         }
         #main{
             display: flex;
@@ -39,8 +42,8 @@
 </head>
 <body>
     <div id="main">
-        <div class="log">LOGIN</div>
-        <ul>
+        <div class="log" v-on:click="dropmenu">LOGIN</div>
+        <ul v-if="droped_down">
             <li class="ho" onclick="alert(1)">asdwq</li>
             <li class="ho" onclick="alert(2)">123cas</li>
         </ul>
@@ -49,10 +52,12 @@
         let app = new Vue({
             el: "#main",
             data: {
-                droped_down: false
+                droped_down: false,
             },
             methods:{
-
+                dropmenu: function(){
+                    this.droped_down = !this.droped_down
+                }
             }
         })
     </script>

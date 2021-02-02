@@ -19,6 +19,11 @@ let app = new Vue({
 
         //nav dropdown
         dropped_down: false,
+        //rendering dropdown mene
+        facilities: [{
+            func: "",
+            title: ""
+        }]
     },
     methods: {
         main: function(){
@@ -39,5 +44,9 @@ let app = new Vue({
             // favourite manga (can only toggle after logged in)
             alert(4)
         },
+        dropmenu: function(){
+            this.dropped_down = !this.dropped_down
+        }
+
     }
 })
