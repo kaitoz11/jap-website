@@ -12,17 +12,21 @@
     <div id="main">
         <div id="test-nav">
             <div class="container ngang main-nav">
-                <div class="cchild ho" v-on:click="main">HOME</div>
+                <div class="ho" v-on:click="main">HOME</div>
                 <div class="search-bar ngang">
                     <input v-model="searchInp" @keyup.enter="searchMG" type="text" id="searchbar" placeholder="Quick search">
                     <div style="padding-top: 4px;" class="ho" v-on:click="searchMG"><i class="fas fa-search"></i></div>
                 </div>
                 <div class="ngang">
                     <div style="margin-right: 15px;" class="ho" v-on:click="fav"><i class="fas fa-heart"></i></div>
-                    <div>
-                        <div class="cchild ho" v-on:click="login" v-if="user_id==0">LOGIN</div>
-                        <div class="cchild ho" v-on:click="dropmenu" v-else>{{users[user_id-1].username}}</div>
-                        <!-- <ul></ul> -->
+                    <div class="menu">
+                        <div class="ho" v-on:click="login" v-if="user_id==0">LOGIN</div>
+                        <div class="ho" v-on:click="dropmenu" v-else>{{users[user_id-1].username}}</div>
+                        <ul v-if="dropped_down" style="float: right;">
+                            <li v-on:click="Profile" class="ho">Profile</li>
+                            <li v-on:click="" class="ho">favourite</li>
+                            <li v-on:click="log_out" class="ho">Log out</li>
+                        </ul>
                     </div>
                     
                 </div>

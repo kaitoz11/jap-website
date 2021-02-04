@@ -9,7 +9,7 @@ body{
     position: fixed;
     width: 100%;
     margin-bottom: 100px;
-    border-bottom: 0.2px solid rgb(54, 54, 54);
+    border-bottom: 1px solid rgb(54, 54, 54);
 }
 .container{
     max-width: 1200px;
@@ -20,9 +20,6 @@ body{
     justify-content: space-between;
     margin: 0 auto;
     padding: 12.5px 0;
-}
-.cchild{
-    height: 100%;
 }
 .fas{
     color: rgb(219, 219, 219);
@@ -38,7 +35,8 @@ body{
     display: flex;
     justify-content: space-between ;
     padding: 0px 10px;
-    border-radius: 4px;
+    border-radius: 6px;
+    border:  1px solid rgb(54, 54, 54);
 }
 i{
     max-height: 22px;
@@ -56,4 +54,23 @@ i{
 .ho:hover,.fas:hover{
     cursor: pointer;
     color: rgb(88, 166, 255);
+}
+ul{
+    padding: 0;
+    margin: 10px 0 0 0;
+    width: 100px;
+    background-color: rgb(26, 34, 46);
+    border-radius: 5px;
+    border: 1px solid rgb(117, 117, 117);
+}
+li{
+    list-style: none;
+    padding: 5px 0;
+    text-align: center;
+}
+.menu{
+    width: 100px;
+}
+.menu div{
+    text-align: center;
 }
