@@ -3,7 +3,7 @@ body{
     background-color: rgb(13, 17, 23);
     color: rgb(219, 219, 219);
 }
-#test-nav{
+#nav{
     height: 50px;
     background-color: rgb(22, 27, 34);
     position: fixed;

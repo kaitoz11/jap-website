@@ -42,20 +42,20 @@ let app = new Vue({
             console.log(app.searchInp);
             app.searchInp = ''
         },
-        fav: function(){
+        fav_dropdown: function(){
             // favourite manga (can only toggle after logged in)
             alert(4)
         },
         dropmenu: function(){
-            this.dropped_down = !this.dropped_down
+            this.dropped_down = !this.dropped_down;
         },
         //menu
         Profile: function(){
 
         },
         log_out: function(){
-            this.user_id = 0
-        }
+            this.user_id = 0;
+            this.dropmenu();        }
 
     }
 })

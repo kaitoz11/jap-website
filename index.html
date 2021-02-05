@@ -10,7 +10,8 @@
 </head>
 <body>
     <div id="main">
-        <div id="test-nav">
+        <!-- Nav-bar -->
+        <div id="nav">
             <div class="container ngang main-nav">
                 <div class="ho" v-on:click="main">HOME</div>
                 <div class="search-bar ngang">
@@ -18,7 +19,7 @@
                     <div style="padding-top: 4px;" class="ho" v-on:click="searchMG"><i class="fas fa-search"></i></div>
                 </div>
                 <div class="ngang">
-                    <div style="margin-right: 15px;" class="ho" v-on:click="fav"><i class="fas fa-heart"></i></div>
+                    <div style="margin-right: 15px;" class="ho" v-on:click="fav_dropdown"><i class="fas fa-heart"></i></div>
                     <div class="menu">
                         <div class="ho" v-on:click="login" v-if="user_id==0">LOGIN</div>
                         <div class="ho" v-on:click="dropmenu" v-else>{{users[user_id-1].username}}</div>
@@ -28,9 +29,7 @@
                             <li v-on:click="log_out" class="ho">Log out</li>
                         </ul>
                     </div>
-                    
                 </div>
-                
             </div>
         </div>
     </div>
