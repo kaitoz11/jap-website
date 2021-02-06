@@ -55,7 +55,7 @@ let app = new Vue({
         },
         log_out: function(){
             this.user_id = 0;
-            this.dropmenu();        }
-
+            this.dropmenu();
+        }
     }
 })
