@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <style>
-        .ho:hover,.log:hover{
+        /* .ho:hover,.log:hover{
             cursor: pointer;
             color: darkgreen;
             border-radius: 5px;
@@ -37,29 +37,34 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-        }
+        } */
     </style>
 </head>
 <body>
     <div id="main">
-        <div class="log" v-on:click="dropmenu">LOGIN</div>
+        <!-- <div class="log" v-on:click="dropmenu">LOGIN</div>
         <ul v-if="droped_down">
             <li class="ho" onclick="alert(1)">asdwq</li>
             <li class="ho" onclick="alert(2)">123cas</li>
-        </ul>
+        </ul> -->
+
+        <div id="ls">
+            <h2 id="ls_header">Login</h2>
+            
+        </div>
     </div>
     <script>
-        let app = new Vue({
-            el: "#main",
-            data: {
-                droped_down: false,
-            },
-            methods:{
-                dropmenu: function(){
-                    this.droped_down = !this.droped_down
-                }
-            }
-        })
+        // let app = new Vue({
+        //     el: "#main",
+        //     data: {
+        //         droped_down: false,
+        //     },
+        //     methods:{
+        //         dropmenu: function(){
+        //             this.droped_down = !this.droped_down
+        //         }
+        //     }
+        // })
     </script>
 </body>
 </html>

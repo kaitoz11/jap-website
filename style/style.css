@@ -3,6 +3,7 @@ body{
     background-color: rgb(13, 17, 23);
     color: rgb(219, 219, 219);
 }
+/* Nav bar */
 #nav{
     height: 50px;
     background-color: rgb(22, 27, 34);
@@ -72,5 +73,19 @@ li{
     width: 100px;
 }
 .menu div{
+    text-align: center;
+}
+
+/* Login */
+#ls{
+    background-color: rgb(52, 52, 80);
+    margin: 150px auto 0 auto;
+    width: 500px;
+    height: 600px;
+    border: 1px solid rgb(117, 117, 117);
+    border-radius: 20px;
+}
+#ls_header{
+    margin: 40px 0;
     text-align: center;
 }

@@ -14,18 +14,14 @@ let app = new Vue({
         users: [{
             username: "admin",
             password: "admin",
+            favourite_mangas:[],
+            read_history:[]
         }],
 
         //nav dropdown
         dropped_down: false,
         //rendering dropdown mene
-        facilities: [{
-            func: "alert('hello')",
-            title: "say hello"
-        },{
-            func: "alert('hi')",
-            title: "say hi"
-        }]
+        
     },
     methods: {
         main: function(){
@@ -39,12 +35,15 @@ let app = new Vue({
         },
         searchMG: function(){
             //app.searchInp = manga name
-            console.log(app.searchInp);
+            console.log('searching for "'+app.searchInp+'"');
             app.searchInp = ''
         },
         fav_dropdown: function(){
             // favourite manga (can only toggle after logged in)
-            alert(4)
+            if(this.user_id==0){
+                this.login();
+            }
+            
         },
         dropmenu: function(){
             this.dropped_down = !this.dropped_down;
@@ -56,6 +55,9 @@ let app = new Vue({
         log_out: function(){
             this.user_id = 0;
             this.dropmenu();
+        },
+        load_favourite: function(){
+
         }
     }
 })
