@@ -80,12 +80,47 @@ li{
 #ls{
     background-color: rgb(52, 52, 80);
     margin: 150px auto 0 auto;
-    width: 500px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
     border: 1px solid rgb(117, 117, 117);
     border-radius: 20px;
 }
 #ls_header{
     margin: 40px 0;
     text-align: center;
+}
+/* login-signin input */
+.container_inp{
+    margin: 0 20px 40px 70px;
+    width: 260px;
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+}
+.lo_si_inp{
+    width: 240px;
+    height: 30px;
+    margin-left: 16px;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+.sub_button{
+    padding: 20px 30px;
+    background-color: rgb(22, 27, 34);
+    border: 1px solid rgb(67, 67, 67);
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 20px;
+}
+.sub_button:hover{
+    background-color: rgb(39, 48, 61);
+}
+.ls_switch{
+    text-align: center;
+    margin-top: 10px;
+}
+.link{
+    color: burlywood;
 }

@@ -20,8 +20,12 @@ let app = new Vue({
 
         //nav dropdown
         dropped_down: false,
-        //rendering dropdown mene
-        
+        //login input pass and username
+        inp_lo_us:'',
+        inp_lo_pa:'',
+
+        //test area
+        mieru: true,
     },
     methods: {
         main: function(){

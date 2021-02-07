@@ -48,12 +48,20 @@
             <li class="ho" onclick="alert(2)">123cas</li>
         </ul> -->
 
-        <div id="ls">
+        <div id="ls" v-if="login_signin">
             <h2 id="ls_header">Login</h2>
-            
+            <div class="container_inp">
+                <input type="text" class="lo_si_inp" v-model="inp_lo_us" placeholder="username">
+            </div>
+            <div class="container_inp">
+                <input type="password" class="lo_si_inp" v-model="inp_lo_pa" placeholder="password">
+            </div>
+            <div class="sub_button ho">SUBMIT</div>
+            <div class="ls_switch">Not registered? <span class="link ho" v-on:click="">Create an account</span></div>
         </div>
-    </div>
-    <script>
+        
+    </div> 
+    <script src="./script/vue-components.js">
         // let app = new Vue({
         //     el: "#main",
         //     data: {
