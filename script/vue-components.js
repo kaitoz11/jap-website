@@ -91,12 +91,18 @@ let app = new Vue({
                 for(let i=0;i<this.users.length;i++){
                     if(this.inp_lo_us == this.users[i].username && this.inp_lo_pa == this.users[i].password){
                         this.user_id = i+1;
-                        this.main()
+                        this.main();
+                        return 0;
                     }
                 }
+                alert('Log in failed! Try again!');
+
             }else{
                 //sign in 
-            }   
+            }
+            this.inp_lo_pa = '';
+            this.inp_si_pa = '';
+            this.inp_si_pa_co = '';
         }
     }
 })
