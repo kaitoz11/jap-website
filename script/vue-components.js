@@ -88,7 +88,12 @@ let app = new Vue({
         ls_submit: function(){
             if(this.ls_switcher){
                 //log in
-                
+                for(let i=0;i<this.users.length;i++){
+                    if(this.inp_lo_us == this.users[i].username && this.inp_lo_pa == this.users[i].password){
+                        this.user_id = i+1;
+                        this.main()
+                    }
+                }
             }else{
                 //sign in 
             }   
