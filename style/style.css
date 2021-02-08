@@ -79,9 +79,9 @@ li{
 /* Login */
 #ls{
     background-color: rgb(52, 52, 80);
-    margin: 150px auto 0 auto;
+    margin: 5% auto 0 auto;
     width: 400px;
-    height: 400px;
+    height: 450px;
     border: 1px solid rgb(117, 117, 117);
     border-radius: 20px;
 }
@@ -123,4 +123,12 @@ li{
 }
 .link{
     color: burlywood;
+}
+.home_button{
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px 50px;
+    width: 100px;
+    background-color: rgb(129, 77, 177);
+    border-radius: 20px;
 }

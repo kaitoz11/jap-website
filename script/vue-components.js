@@ -23,19 +23,38 @@ let app = new Vue({
         //login input pass and username
         inp_lo_us:'',
         inp_lo_pa:'',
-
+        //sigin input pass and username
+        inp_si_us:'',
+        inp_si_pa:'',
+        inp_si_pa_co:'',
+        //components
+        login_signin: false,
+        nav_bar: true,
+        ls_switcher: true,
+        
         //test area
-        mieru: true,
+        
     },
     methods: {
+        allComponentsOff: function(){
+            //must include all components
+            this.login_signin = false;
+            this.nav_bar = false;
+
+        },
         main: function(){
-            
+            this.allComponentsOff();
+            this.nav_bar = true;
         },
         login: function(){
-            alert(1)
+            // done
+            this.allComponentsOff();
+            this.login_signin = true;
+            this.ls_switcher = true
         },
         signin: function(){
-            alert(2)
+            // done
+            this.ls_switcher = !this.ls_switcher;
         },
         searchMG: function(){
             //app.searchInp = manga name
@@ -50,6 +69,7 @@ let app = new Vue({
             
         },
         dropmenu: function(){
+            // done
             this.dropped_down = !this.dropped_down;
         },
         //menu
@@ -57,11 +77,21 @@ let app = new Vue({
 
         },
         log_out: function(){
+            // done
             this.user_id = 0;
             this.dropmenu();
+            this.main()
         },
         load_favourite: function(){
 
+        },
+        ls_submit: function(){
+            if(this.ls_switcher){
+                //log in
+                
+            }else{
+                //sign in 
+            }   
         }
     }
 })

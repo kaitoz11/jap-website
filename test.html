@@ -49,16 +49,26 @@
         </ul> -->
 
         <div id="ls" v-if="login_signin">
-            <h2 id="ls_header">Login</h2>
+            <div>
+                <h2 id="ls_header" v-if="ls_switcher">LOG IN</h2>
+                <h2 id="ls_header" v-else>SIGN IN</h2>
             <div class="container_inp">
-                <input type="text" class="lo_si_inp" v-model="inp_lo_us" placeholder="username">
+                <input type="text" class="lo_si_inp" v-model="inp_lo_us" placeholder="Username" v-if="ls_switcher">
+                <input type="text" class="lo_si_inp" v-model="inp_si_us" placeholder="Username" v-else>
             </div>
             <div class="container_inp">
-                <input type="password" class="lo_si_inp" v-model="inp_lo_pa" placeholder="password">
+                <input type="password" class="lo_si_inp" v-model="inp_lo_pa" placeholder="Password"  v-if="ls_switcher">
+                <input type="password" class="lo_si_inp" v-model="inp_si_pa" placeholder="Password"  v-else>
             </div>
-            <div class="sub_button ho">SUBMIT</div>
-            <div class="ls_switch">Not registered? <span class="link ho" v-on:click="">Create an account</span></div>
+            <div class="container_inp" v-if="ls_switcher==false">
+                <input type="password" class="lo_si_inp" v-model="inp_si_pa_co" placeholder="Confirm password">
+            </div>
+            <div class="sub_button ho" v-on:click="ls_submit">SUBMIT</div>
+            <div class="ls_switch"  v-if="ls_switcher">Not registered? <span class="link ho" v-on:click="signin">Create an account</span></div>
+            <div class="ls_switch"  v-else>Already have an account? <span class="link ho" v-on:click="signin">Log in</span></div>
+            </div>
         </div>
+        <div class="home_button ho" v-if="login_signin" v-on:click="main">HOME</div>
         
     </div> 
     <script src="./script/vue-components.js">
