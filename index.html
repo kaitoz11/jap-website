@@ -43,7 +43,7 @@
                 <div class="ngang">
                     <div style="margin-right: 15px;" class="ho" v-on:click="fav_dropdown"><i class="fas fa-heart"></i></div>
                     <div class="menu">
-                        <div class="ho" v-on:click="login" v-if="user_id==0">LOGIN</div>
+                        <div class="ho" v-on:click="login" v-if="user_id==0">LOG IN</div>
                         <div class="ho" v-on:click="dropmenu" v-else>{{users[user_id-1].username}}</div>
                         <ul v-if="dropped_down" style="float: right;">
                             <li v-on:click="Profile" class="ho">Profile</li>

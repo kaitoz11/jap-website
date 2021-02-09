@@ -92,17 +92,40 @@ let app = new Vue({
                     if(this.inp_lo_us == this.users[i].username && this.inp_lo_pa == this.users[i].password){
                         this.user_id = i+1;
                         this.main();
+                        this.inp_lo_pa = '';
                         return 0;
                     }
                 }
                 alert('Log in failed! Try again!');
 
             }else{
-                //sign in 
+                //sign in
+                if(this.inp_si_pa != this.inp_si_pa_co && this.inp_si_us!='' && this.inp_si_pa_co!=''&&this.inp_si_pa!=''){
+                    this.inp_si_pa = '';
+                    this.inp_si_pa_co = '';
+                    alert("Sign in failed! Try again!")
+                    return 0
+                }
+                for(let a=0;a<this.users.length;a++){
+                    if(this.inp_si_us == this.users[a].username){
+                        this.inp_si_pa = '';
+                        this.inp_si_pa_co = '';
+                        alert("Account already exist! Try another username.");
+                        return 0
+                    }
+                }                
+                this.users.push({
+                    username: this.inp_si_us,
+                    password: this.inp_si_pa,
+                    favourite_mangas:[],
+                    read_history:[]
+                });
+                this.signin();
+                this.inp_si_pa = '';
+                this.inp_si_pa_co = '';
+                this.inp_si_us = '';
             }
-            this.inp_lo_pa = '';
-            this.inp_si_pa = '';
-            this.inp_si_pa_co = '';
+            
         }
     }
 })
