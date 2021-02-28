@@ -132,9 +132,15 @@ li{
     background-color: rgb(129, 77, 177);
     border-radius: 20px;
 }
+/* Container */
+#Container{
+    height: 5000px;
+}
 
-/* footer */
-#footer{
+/* Footer */
+#Footer{
+    border-top: 1px solid rgb(34, 34, 34);
     height: 400px;
-    
+    background-color: white;
+    color: black;
 }
