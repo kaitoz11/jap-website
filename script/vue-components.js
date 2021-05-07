@@ -14,8 +14,8 @@ let app = new Vue({
         users: [{
             username: "admin",
             password: "admin",
-            favourite_mangas:[],
-            read_history:[]
+            favourite:[],
+            search_history:[]
         }],
 
         //nav dropdown
@@ -117,8 +117,8 @@ let app = new Vue({
                 this.users.push({
                     username: this.inp_si_us,
                     password: this.inp_si_pa,
-                    favourite_mangas:[],
-                    read_history:[]
+                    favourite:[],
+                    search_history:[]
                 });
                 this.signin();
                 this.inp_si_pa = '';

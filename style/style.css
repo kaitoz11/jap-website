@@ -134,7 +134,18 @@ li{
 }
 /* Container */
 #Container{
-    height: 5000px;
+    display: flex;
+    flex-direction: row;
+    height: 1000px;
+    padding: 20px;
+}
+.left{
+    width: 80%;
+    /* background-color: royalblue; */
+}
+.right{
+    width: 20%;
+    /* background-color: salmon; */
 }
 
 /* Footer */

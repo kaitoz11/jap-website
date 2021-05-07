@@ -1,22 +1,7 @@
-let authors = [
-    {
-        name: '',
-
-    }
-]
-
-
-let mangadb = [
-    {
-        titles: [], // array of titles, [0] must be romanized jap
-        author: authors[0].name,
-        genre: [],
-        statu: "", // on going - complete
-        progress: {
-            vol: 0,
-            chap: 0,
-        }, // chap , vol
-        description: "",
-        year: 0, // published year
-    }
-];
+let temp_Data
+async function getAPI(url){
+    const response = await fetch(url)
+    temp_Data = await response.json()
+    console.log(temp_Data)
+}
+const usingAPI = 'https://kanjiapi.dev/v1/'
