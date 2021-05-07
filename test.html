@@ -71,6 +71,13 @@
         <div class="home_button ho" v-if="login_signin" v-on:click="main">HOME</div>
         
     </div> 
+    <script>
+        async function getAPI(url){
+            const respone = await fetch(url)
+            var data = await respone.json()
+            console.log(data)
+        }
+    </script>
     <script src="./script/vue-components.js">
         // let app = new Vue({
         //     el: "#main",
