@@ -1,10 +1,3 @@
-Vue.component('drop-bar',{
-    props: ['dropdown'],
-    template:'<li class="ho" onclick="{dropdown.func}">{{dropdown.title}}</li>'
-})
-
-
-
 let app = new Vue({
     el:"#main",
     data: {
@@ -36,9 +29,7 @@ let app = new Vue({
         show_Kanji: true,
         //test area
         // datas
-        kanjidata:{},
-        wordsdata:{},
-        readingdatas:{},
+        
         //searching
         drop_stype: false,
         search_typeID: 0,
@@ -52,7 +43,8 @@ let app = new Vue({
             this.container= false;
             this.footer =false;
             this.drop_stype=false;
-            
+            document.getElementById("left").innerHTML ='';
+            document.getElementById("right").innerHTML ='';
         },
         main: function(){
             this.allComponentsOff();
@@ -72,19 +64,19 @@ let app = new Vue({
         },
         searchMG: function(){
             //app.searchInp
+            this.main()
             console.log('searching for "'+this.searchInp+'"');
             if(!isJap(this.searchInp)){
                 console.log("Not found - not japanese")
+                document.getElementById("left").innerHTML ='<h1>No result found</h1>';
                 return 0
             }
             if(this.search_typeID==0){
-                this.kanjidatakanjidata = getAPI(usingAPI+this.search_type[0]+"/"+this.searchInp)
-                this.wordsdata = getAPI(usingAPI+this.search_type[2]+"/"+this.searchInp)
+                getAPI(usingAPI+this.search_type[0]+"/"+this.searchInp[0]).then(data => {load_Kanji(data)})
+                getAPI(usingAPI+this.search_type[2]+"/"+this.searchInp[0]).then(data => {load_Words(data)})
             }else{
-                this.readingdatas=getAPI(usingAPI+this.search_type[this.search_typeID]+"/"+this.searchInp)
+                getAPI(usingAPI+this.search_type[this.search_typeID]+"/"+this.searchInp).then(data => {readingdatas = data})
             }
-            
-
         },
         fav_dropdown: function(){
             // favourite manga (can only toggle after logged in)
