@@ -37,6 +37,12 @@
             <div class="container ngang main-nav">
                 <div class="ho" v-on:click="main">HOME</div>
                 <div class="search-bar ngang">
+                    <!-- Restyle this!!! -->
+                    <ul>
+                        <li class="ho" v-on:click="Drop_stype">{{search_type[search_typeID]}}</li>
+                        <li class="ho" v-if="drop_stype" v-on:click="Drop_stype"></li>
+                    </ul>
+                
                     <input v-model="searchInp" @keyup.enter="searchMG" type="text" id="searchbar" placeholder="Quick search">
                     <div style="padding-top: 4px;" class="ho" v-on:click="searchMG"><i class="fas fa-search"></i></div>
                 </div>
@@ -57,7 +63,9 @@
         <div style="height: 150px; background-color: darkgray;"></div>
         <!-- Main Container -->
         <div id="Container">
-            <div class="left"></div>
+            <div class="left">
+                <div></div>
+            </div>
             <div class="right"></div>
         </div>
         

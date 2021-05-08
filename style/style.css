@@ -56,7 +56,11 @@ i{
     cursor: pointer;
     color: rgb(88, 166, 255);
 }
-ul{
+.tbox{
+    
+    padding: auto;
+}
+ul, .stype{
     padding: 0;
     margin: 10px 0 0 0;
     width: 100px;

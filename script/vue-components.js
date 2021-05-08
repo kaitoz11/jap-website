@@ -33,14 +33,17 @@ let app = new Vue({
         ls_switcher: true,
         
         //test area
-        
+        //searching
+        drop_stype: false,
+        search_typeID: 0,
+        search_type: ['kanji','reading','words'], // 0 is kanji, 1 is reading, 2 is words
     },
     methods: {
         allComponentsOff: function(){
             //must include all components
             this.login_signin = false;
             this.nav_bar = false;
-
+            
         },
         main: function(){
             this.allComponentsOff();
@@ -58,8 +61,8 @@ let app = new Vue({
         },
         searchMG: function(){
             //app.searchInp = manga name
-            console.log('searching for "'+app.searchInp+'"');
-            app.searchInp = ''
+            console.log('searching for "'+this.searchInp+'"');
+            getAPI(usingAPI+this.search_type[this.search_typeID]+"/"+this.searchInp)
         },
         fav_dropdown: function(){
             // favourite manga (can only toggle after logged in)
@@ -67,6 +70,10 @@ let app = new Vue({
                 this.login();
             }
             
+        },
+        Drop_stype: function(){
+            // console.log(a)
+            this.drop_stype=!this.drop_stype
         },
         dropmenu: function(){
             // done
