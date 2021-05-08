@@ -142,20 +142,50 @@ li{
     flex-direction: row;
     height: 1000px;
     padding: 20px;
+    background-color: white;
+    color: black;
 }
-.left{
-    width: 80%;
+#left{
+    width: 70%;
+    padding: 1%;
     /* background-color: royalblue; */
 }
-.right{
-    width: 20%;
+#right{
+    width: 30%;
+    padding: 1%;
     /* background-color: salmon; */
 }
-
+.item{
+    min-height: 100px;
+    padding: 0;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid rgb(167, 167, 167);
+}
+.name{
+    padding-left: 10px;
+    font-size: 40px;
+    width: 300px;
+}
+.info{
+    width: 100%;
+    padding: 10px 20px;
+}
+.tag{
+    color: rgb(99, 97, 97);
+    font-size: 20px;
+    margin-top: 10px;
+}
+.naka{
+    padding-left: 20px;
+}
+.jap{
+    padding-top: 10px;
+    font-size: 24px;
+}
 /* Footer */
 #Footer{
     border-top: 1px solid rgb(34, 34, 34);
     height: 100px;
-    background-color: darkgrey;
-    color: black;
+    background-color: rgb(75, 75, 75);
+    color: rgb(255, 255, 255);
 }

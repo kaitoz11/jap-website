@@ -36,16 +36,18 @@
         <div id="nav" v-if="nav_bar">
             <div class="container ngang main-nav">
                 <div class="ho" v-on:click="main">HOME</div>
-                <div class="search-bar ngang">
-                    <!-- Restyle this!!! -->
-                    <ul>
-                        <li class="ho" v-on:click="Drop_stype">{{search_type[search_typeID]}}</li>
-                        <li class="ho" v-if="drop_stype" v-on:click="Drop_stype"></li>
+                <div>
+                    <ul style="float: right; margin: 0;">
+                        <li class="ho"  v-on:click="Drop_stype(search_typeID)">{{search_type[search_typeID]}}</li>
+                        <li class="ho" v-if="drop_stype" v-on:click="Drop_stype(0)">KANJI</li>
+                        <li class="ho" v-if="drop_stype" v-on:click="Drop_stype(1)">READING</li>
                     </ul>
-                
-                    <input v-model="searchInp" @keyup.enter="searchMG" type="text" id="searchbar" placeholder="Quick search">
-                    <div style="padding-top: 4px;" class="ho" v-on:click="searchMG"><i class="fas fa-search"></i></div>
+                    <div class="search-bar ngang">
+                        <input v-model="searchInp" @keyup.enter="searchMG" type="text" id="searchbar" placeholder="Quick search">
+                        <div style="padding-top: 4px;" class="ho" v-on:click="searchMG"><i class="fas fa-search"></i></div>
+                    </div>
                 </div>
+               
                 <div class="ngang">
                     <div style="margin-right: 15px;" class="ho" v-on:click="fav_dropdown"><i class="fas fa-heart"></i></div>
                     <div class="menu">
@@ -62,15 +64,29 @@
         </div>
         <div style="height: 150px; background-color: darkgray;"></div>
         <!-- Main Container -->
-        <div id="Container">
-            <div class="left">
-                <div></div>
+        <div id="Container" v-if="container">
+            <div id="left">
+                <!-- show words -->
+                <h1>words</h1>
+                <div class="item ngang">
+                    <div class="name">
+                        擬蝦夷法螺
+                    </div>
+                    <div class="info">
+                        <div class="tag">Pronounced</div>
+                        <div class="naka jap">えぞぼらもどき</div>
+                        <div class="tag">Meanings</div>
+                        <div class="naka jap">double-sculptured neptune (species of whelk, Neptunea intersculpta)</div>
+                    </div>
+                </div>
             </div>
-            <div class="right"></div>
+            <div id="right">
+                <!-- show kanji -->
+            </div>
         </div>
         
         <!-- Footer -->
-        <div id="Footer"></div>
+        <div id="Footer" v-if="footer"></div>
     </div>
     <script src="./script/main.js"></script>
     <script src="./script/vue-components.js"></script>

@@ -31,8 +31,14 @@ let app = new Vue({
         login_signin: false,
         nav_bar: true,
         ls_switcher: true,
-        
+        container: true,
+        footer: true,
+        show_Kanji: true,
         //test area
+        // datas
+        kanjidata:{},
+        wordsdata:{},
+        readingdatas:{},
         //searching
         drop_stype: false,
         search_typeID: 0,
@@ -43,11 +49,16 @@ let app = new Vue({
             //must include all components
             this.login_signin = false;
             this.nav_bar = false;
+            this.container= false;
+            this.footer =false;
+            this.drop_stype=false;
             
         },
         main: function(){
             this.allComponentsOff();
             this.nav_bar = true;
+            this.container= true;
+            this.footer =true;
         },
         login: function(){
             // done
@@ -60,9 +71,20 @@ let app = new Vue({
             this.ls_switcher = !this.ls_switcher;
         },
         searchMG: function(){
-            //app.searchInp = manga name
+            //app.searchInp
             console.log('searching for "'+this.searchInp+'"');
-            getAPI(usingAPI+this.search_type[this.search_typeID]+"/"+this.searchInp)
+            if(!isJap(this.searchInp)){
+                console.log("Not found - not japanese")
+                return 0
+            }
+            if(this.search_typeID==0){
+                this.kanjidatakanjidata = getAPI(usingAPI+this.search_type[0]+"/"+this.searchInp)
+                this.wordsdata = getAPI(usingAPI+this.search_type[2]+"/"+this.searchInp)
+            }else{
+                this.readingdatas=getAPI(usingAPI+this.search_type[this.search_typeID]+"/"+this.searchInp)
+            }
+            
+
         },
         fav_dropdown: function(){
             // favourite manga (can only toggle after logged in)
@@ -71,8 +93,9 @@ let app = new Vue({
             }
             
         },
-        Drop_stype: function(){
-            // console.log(a)
+        Drop_stype: function(a){
+            //done
+            this.search_typeID=a
             this.drop_stype=!this.drop_stype
         },
         dropmenu: function(){
