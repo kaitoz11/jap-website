@@ -66,16 +66,26 @@ let app = new Vue({
             //app.searchInp
             this.main()
             console.log('searching for "'+this.searchInp+'"');
-            if(!isJap(this.searchInp)){
+            if(!isJap(this.searchInp)|| this.searchInp.length==0){
                 console.log("Not found - not japanese")
                 document.getElementById("left").innerHTML ='<h1>No result found</h1>';
                 return 0
             }
             if(this.search_typeID==0){
-                getAPI(usingAPI+this.search_type[0]+"/"+this.searchInp[0]).then(data => {load_Kanji(data)})
-                getAPI(usingAPI+this.search_type[2]+"/"+this.searchInp[0]).then(data => {load_Words(data)})
+                getAPI(usingAPI+this.search_type[0]+"/"+this.searchInp[0]).then(data1 => {load_Kanji(data1)})
+                getAPI(usingAPI+this.search_type[2]+"/"+this.searchInp[0]).then(data2 => {load_Words(data2)})
             }else{
-                getAPI(usingAPI+this.search_type[this.search_typeID]+"/"+this.searchInp).then(data => {readingdatas = data})
+                temp_Data=[]
+                getAPI(usingAPI+this.search_type[this.search_typeID]+"/"+this.searchInp).then(data => {
+                    for(let j=0;j<data.main_kanji.length;j++){
+                        getAPI(usingAPI+this.search_type[0]+"/"+data.main_kanji[j]).then(datA => {
+                            temp_Data.push(datA)
+                            return 0
+                        })
+                    }
+                    load_readings(data);
+                })
+                
             }
         },
         fav_dropdown: function(){
