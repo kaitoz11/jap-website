@@ -43,8 +43,8 @@ let app = new Vue({
             this.container= false;
             this.footer =false;
             this.drop_stype=false;
-            document.getElementById("left").innerHTML ='';
-            document.getElementById("right").innerHTML ='';
+            // document.getElementById("left").innerHTML ='';
+            // document.getElementById("right").innerHTML ='';
         },
         main: function(){
             this.allComponentsOff();

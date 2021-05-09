@@ -53,10 +53,12 @@ function load_Kanji(data){
                 </div>`
     document.getElementById("right").innerHTML= str1;
 }
-function loop2(kji){
+function loop2(kji){ 
+    console.log("temp_Data", temp_Data)
+    let html = ""
     for(let e=0;e<temp_Data.length;e++){
         if(kji==temp_Data[e].kanji){
-            return `
+            html += `
             <div class="info">
                 <div class="tag">`+temp_Data[e].stroke_count+` strokes</div>
                 <div class="tag">kun reading:</div>
@@ -69,8 +71,11 @@ function loop2(kji){
             `
         }
     }
+    console.log("loop2", html)
+    return html
 }
 function load_readings(data){
+    console.log("load_readings",data)
     let str = '<h1>readings - '+ data.main_kanji.length +' search results found</h1>';
     for(let i=0;i<data.main_kanji.length;i++){
         str+=`
